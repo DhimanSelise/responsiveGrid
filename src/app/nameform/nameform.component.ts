@@ -33,7 +33,6 @@ export class NameformComponent implements OnInit {
   submitPlayerName(){
     // this.dialogClose();
     this.isLoading=true;
-
     setTimeout(()=>{
       this.isLoading=false;
       this.dialogRef.close(this.playerNames.value);

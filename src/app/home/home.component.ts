@@ -1,17 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { NameformComponent } from '../nameform/nameform.component';
-
+export interface PlayerName{
+  player1:string,
+  player2:string
+}
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
+
+
+
 export class HomeComponent implements OnInit {
-  PlayerNames:any;
-
-  constructor(private dialog:MatDialog) {
-
+  PlayerNames?:PlayerName;
+  constructor(private dialog:MatDialog,private _snackBar: MatSnackBar) {
+    
   }
 
   ngOnInit(): void {
@@ -20,6 +26,13 @@ export class HomeComponent implements OnInit {
       player1 :'x',
       player2: 'y'
     }
+  }
+
+  openSnackBar(message: string,siteMassage:string) {
+    this._snackBar.open(message, siteMassage, {
+      duration: 3000
+    });
+    
   }
 
   openDialog(){
@@ -34,10 +47,15 @@ export class HomeComponent implements OnInit {
     );
     dialogRef.afterClosed().subscribe(res => {
       console.log(res);
+      this.openSnackBar("Welcome to TicTacToe Multiverse", "Lets Play"); 
       this.PlayerNames = res;
     }
 
     )
+  }
+
+  RunLoop(n:number){
+    return new Array(n) ; 
   }
 
 }

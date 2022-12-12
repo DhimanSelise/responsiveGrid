@@ -1,4 +1,13 @@
-<button (click)="openDialog()">Open Dialog</button>
-<h1>Hello</h1>
-<span>Player 1 = {{PlayerNames.player1}}</span> <br>
-<span>Player 2 = {{PlayerNames.player2}}</span>
+<!-- <button (click)="openDialog()">Edit Player Names</button> -->
+<h1 fxLayoutAlign="center center">Welcome to Tic Tac Toe Multivers</h1>
+<div fxLayoutAlign="center center">
+  <div fxFlex="30" class="grid-area">
+    <mat-grid-list cols="4" rowHeight="1:1">
+      <mat-grid-tile
+        (click)="openDialog()"
+        *ngFor="let grid of RunLoop(50); let i = index"
+        >{{ i + 1 }}
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
