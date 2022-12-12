@@ -7,9 +7,10 @@
         <mat-label>Player 2 Name</mat-label>
         <input formControlName="player2" matInput type="text">
     </mat-form-field>
-    
+
     <div fxLayoutGap="8px">
         <button (click)="playAsGuest()" mat-raised-button color="primary">Play as guest</button>
         <button (click)="submitPlayerName()" mat-stroked-button color="warn">Submit Name</button>
+        <mat-spinner *ngIf="isLoading" [diameter]="15"></mat-spinner>
     </div>
 </div>

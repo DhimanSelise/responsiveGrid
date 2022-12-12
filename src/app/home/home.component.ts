@@ -9,27 +9,35 @@ import { NameformComponent } from '../nameform/nameform.component';
 })
 export class HomeComponent implements OnInit {
   PlayerNames:any;
-  constructor(private dialog:MatDialog,  private dialogRef:MatDialogRef<NameformComponent>) {
-    
+
+  constructor(private dialog:MatDialog) {
+
   }
 
   ngOnInit(): void {
-    this.openDialog();
+    // this.openDialog();
+    this.PlayerNames = {
+      player1 :'x',
+      player2: 'y'
+    }
   }
 
   openDialog(){
-    this.dialog.open(NameformComponent
+    const dialogRef = this.dialog.open(NameformComponent
       , {
       data:{
-        player1:"" , 
-        player2:"" , 
+        player1:"" ,
+        player2:"" ,
       }
-    }
+    },
+
     );
-    this.dialogRef.afterClosed().subscribe(res => {
-      console.log(res, "bal");
+    dialogRef.afterClosed().subscribe(res => {
+      console.log(res);
       this.PlayerNames = res;
-    })
+    }
+
+    )
   }
 
 }
