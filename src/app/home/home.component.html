@@ -2,15 +2,19 @@
 <h1 fxLayoutAlign="center center">Welcome to Tic Tac Toe Multivers</h1>
 <div fxLayoutAlign="center center">
   <div fxFlex="70" class="grid-area">
-
-    <mat-grid-list cols="7" rowHeight="4:2">
-      <mat-grid-tile
-        [class]="changeColor()"
-        *ngFor="let grid of RunLoop(2); let i = index"
-        >{{ i + 1 }}
-      </mat-grid-tile>
-    </mat-grid-list>
-
-
+    <div *ngFor="let myRow of RunLoop(); let i = index">
+      <mat-grid-list
+        cols="{{ gerColsSize(5) }}"
+        rowHeight="1:1"
+        gutterSize="0px"
+      >
+        <mat-grid-tile
+          style="border: 5px solid blueviolet"
+          [class]="changeColor()"
+          *ngFor="let grid of RunLoop(); let j = index"
+        >
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
   </div>
 </div>

@@ -56,9 +56,18 @@ export class HomeComponent implements OnInit {
 
   count:number = 0 ; 
 
-  RunLoop(n:number){
-    return new Array(n) ; 
+  colnumber?: number ; 
+
+  RunLoop(){
+    let nums = this.colnumber;
+    return new Array(this.colnumber) ; 
   }
+
+  gerColsSize(n:number){
+    this.colnumber = n; 
+    return n;
+  }
+
   changeColor():string{
     this.count++;
     if(this.count%2===0){
