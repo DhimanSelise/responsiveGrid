@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
 
   openSnackBar(message: string,siteMassage:string) {
     this._snackBar.open(message, siteMassage, {
-      duration: 3000
+      duration: 2500
     });
     
   }
@@ -54,8 +54,19 @@ export class HomeComponent implements OnInit {
     )
   }
 
+  count:number = 0 ; 
+
   RunLoop(n:number){
     return new Array(n) ; 
+  }
+  changeColor():string{
+    this.count++;
+    if(this.count%2===0){
+      return 'player-color-x';
+    }
+    else {
+      return 'player-color-o' ; 
+    }
   }
 
 }

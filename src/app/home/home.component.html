@@ -2,9 +2,10 @@
 <h1 fxLayoutAlign="center center">Welcome to Tic Tac Toe Multivers</h1>
 <div fxLayoutAlign="center center">
   <div fxFlex="30" class="grid-area">
-    <mat-grid-list cols="4" rowHeight="1:1">
+    <mat-grid-list cols="7" rowHeight="1:1">
+      ng-t
       <mat-grid-tile
-        (click)="openDialog()"
+        [class]="changeColor()"
         *ngFor="let grid of RunLoop(50); let i = index"
         >{{ i + 1 }}
       </mat-grid-tile>
