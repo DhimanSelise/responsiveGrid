@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.openDialog();
+    this.openDialog();
     this.PlayerNames = {
       player1 :'x',
       player2: 'y'
