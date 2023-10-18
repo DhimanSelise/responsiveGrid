@@ -25,7 +25,7 @@ jobs:
       run: npm install
 
     - name: Build Angular app
-      run: ng build --prod --base-href /my-angular-app/ # Adjust the base-href according to your repository name
+      run: npm run build
 
     - name: Deploy to GitHub Pages
       run: |
@@ -38,4 +38,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist/my-angular-app # Adjust the path to your built files
+        publish_dir: ./dist/responsive-grid # Adjust the path to your built files
