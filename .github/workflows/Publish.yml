@@ -25,7 +25,7 @@ jobs:
       run: npm install
 
     - name: Build Angular app
-      run: ng build --prod --base-href /responsive-grid/ # Adjust the base-href according to your repository name
+      run: ng build --base-href /responsive-grid/ # Adjust the base-href according to your repository name
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
