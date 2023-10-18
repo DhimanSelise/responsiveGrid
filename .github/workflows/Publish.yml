@@ -25,14 +25,7 @@ jobs:
       run: npm install
 
     - name: Build Angular app
-      run: npm run build
-
-    - name: Deploy to GitHub Pages
-      run: |
-        git checkout -b dev # Switch to the dev branch
-        git add dist/ # Add the built files
-        git commit -m "Add built files for GitHub Pages"
-        git push origin dev # Push the changes to the dev branch
+      run: ng build --prod --base-href /responsive-grid/ # Adjust the base-href according to your repository name
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
